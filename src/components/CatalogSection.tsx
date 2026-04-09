@@ -1,24 +1,28 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
-import nailStilettoImg from "@/assets/nail-stiletto.jpg";
-import nailAlmondImg from "@/assets/nail-almond.jpg";
-import nailFrenchImg from "@/assets/nail-french.jpg";
-import nailArtImg from "@/assets/nail-art.jpg";
-import nailCoffinImg from "@/assets/nail-coffin.jpg";
-import heroImg from "@/assets/hero-nails.jpg";
+import catalog1Img from "@/assets/catalog-1.jpg";
+import catalog2Img from "@/assets/catalog-2.jpg";
+import catalog3Img from "@/assets/catalog-3.jpg";
+import catalog4Img from "@/assets/catalog-4.jpg";
+import catalog5Img from "@/assets/catalog-5.jpg";
+import catalog6Img from "@/assets/catalog-6.jpg";
+import catalog7Img from "@/assets/catalog-7.jpg";
+import catalog8Img from "@/assets/catalog-8.jpg";
 
 const works = [
-  { src: nailStilettoImg, title: "Stiletto", alt: "Unhas stiletto com nail art" },
-  { src: nailAlmondImg, title: "Amendoada", alt: "Unhas formato amendoado" },
-  { src: nailFrenchImg, title: "Francesinha", alt: "Francesinha clássica" },
-  { src: nailArtImg, title: "Nail Art", alt: "Nail art geométrica" },
-  { src: nailCoffinImg, title: "Coffin", alt: "Unhas coffin shape" },
-  { src: heroImg, title: "Artística", alt: "Nail design artístico" },
+  { src: catalog1Img, title: "Design Studio", alt: "Trabalho real de nail design" },
+  { src: catalog2Img, title: "Acabamento Perfeito", alt: "Trabalho real de nail design" },
+  { src: catalog3Img, title: "Detalhes Únicos", alt: "Trabalho real de nail design" },
+  { src: catalog4Img, title: "Nail Art", alt: "Trabalho real de nail design" },
+  { src: catalog5Img, title: "Estilo", alt: "Trabalho real de nail design" },
+  { src: catalog6Img, title: "Inspiração", alt: "Trabalho real de nail design" },
+  { src: catalog7Img, title: "Beleza", alt: "Trabalho real de nail design" },
+  { src: catalog8Img, title: "Exclusivo", alt: "Trabalho real de nail design" },
 ];
 
 const services = [
   { name: "Banho em Gel", price: "R$130", desc: "Camada de gel sobre a unha natural para dar mais resistência, brilho e evitar que quebre facilmente." },
-  { name: "Alongamento", price: "R$200", desc: "Extensão das unhas com gel, deixando no tamanho e formato desejado, com acabamento natural e duradouro." },
+  { name: "Alongamento", price: "R$200", desc: "Extensão das unhas com gel, deixando no tamanho e formato desejado, com acabamento natural e duradouro. Trabalho feito com o molde russo e f1." },
   { name: "Esmaltação em Gel", price: "R$100", desc: "Esmalte em gel com alta durabilidade, brilho intenso e secagem imediata." },
   { name: "Blindagem", price: "R$70", desc: "Proteção da unha natural com uma camada fina de gel, ideal para fortalecer unhas frágeis." },
   { name: "Remoção", price: "R$55", desc: "Retirada segura do gel sem danificar a unha natural." },
@@ -41,21 +45,22 @@ const CatalogSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {works.map((work, i) => (
             <ScrollReveal key={work.title} delay={i * 0.1}>
-              <div className="group relative overflow-hidden aspect-[3/4] cursor-pointer">
-                <img
-                  src={work.src}
-                  alt={work.alt}
-                  loading="lazy"
-                  width={640}
-                  height={800}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
-                />
-                <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="font-typewriter text-xs tracking-[0.2em] uppercase text-foreground">
-                    {work.title}
-                  </span>
+              <div className="gallery-beam-wrap group cursor-pointer aspect-[3/4]">
+                <div className="gallery-beam-inner relative">
+                  <img
+                    src={work.src}
+                    alt={work.alt}
+                    loading="lazy"
+                    width={640}
+                    height={800}
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
+                  />
+                  <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="font-typewriter text-xs tracking-[0.2em] uppercase text-white [text-shadow:0_0_8px_rgba(0,0,0,0.8)]">
+                      {work.title}
+                    </span>
+                  </div>
                 </div>
-                <div className="absolute inset-0 border border-foreground/0 group-hover:border-foreground/20 transition-all duration-500" />
               </div>
             </ScrollReveal>
           ))}
