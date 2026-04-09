@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 import nailStilettoImg from "@/assets/nail-stiletto.jpg";
 import nailAlmondImg from "@/assets/nail-almond.jpg";
@@ -13,6 +14,16 @@ const works = [
   { src: nailArtImg, title: "Nail Art", alt: "Nail art geométrica" },
   { src: nailCoffinImg, title: "Coffin", alt: "Unhas coffin shape" },
   { src: heroImg, title: "Artística", alt: "Nail design artístico" },
+];
+
+const services = [
+  { name: "Banho em Gel", price: "R$130", desc: "Camada de gel sobre a unha natural para dar mais resistência, brilho e evitar que quebre facilmente." },
+  { name: "Alongamento", price: "R$200", desc: "Extensão das unhas com gel, deixando no tamanho e formato desejado, com acabamento natural e duradouro." },
+  { name: "Esmaltação em Gel", price: "R$100", desc: "Esmalte em gel com alta durabilidade, brilho intenso e secagem imediata." },
+  { name: "Blindagem", price: "R$70", desc: "Proteção da unha natural com uma camada fina de gel, ideal para fortalecer unhas frágeis." },
+  { name: "Remoção", price: "R$55", desc: "Retirada segura do gel sem danificar a unha natural." },
+  { name: "Manutenção Banho", price: "R$100", desc: "Manutenção do banho em gel para manter o brilho e a resistência das unhas." },
+  { name: "Manutenção Alongamento", price: "R$110", desc: "Manutenção do alongamento para manter o formato e acabamento perfeito." },
 ];
 
 const CatalogSection = () => {
@@ -50,8 +61,49 @@ const CatalogSection = () => {
           ))}
         </div>
 
+        {/* Serviços e Preços */}
+        <ScrollReveal className="mt-24">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl mb-4">
+              <span className="font-signature text-foreground">Serviços</span>{" "}
+              <span className="font-elegant text-foreground">& Preços</span>
+            </h3>
+            <div className="w-16 h-px bg-foreground/30 mx-auto" />
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {services.map((service, i) => (
+            <ScrollReveal key={service.name} delay={i * 0.08}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="group relative p-6 border border-border rounded-sm bg-card/50 backdrop-blur-sm hover:border-foreground/30 transition-colors duration-500 h-full flex flex-col"
+              >
+                <div className="flex items-baseline justify-between mb-3">
+                  <h4 className="font-elegant text-lg text-foreground">{service.name}</h4>
+                  <span className="font-typewriter text-sm tracking-wider text-foreground ml-3 shrink-0">
+                    {service.price}
+                  </span>
+                </div>
+                <div className="w-full h-px bg-foreground/10 mb-3" />
+                <p className="font-literature text-xs text-muted-foreground leading-relaxed">
+                  {service.desc}
+                </p>
+              </motion.div>
+            </ScrollReveal>
+          ))}
+        </div>
+
         <ScrollReveal className="text-center mt-12" delay={0.3}>
-          <button className="btn-luxury">Ver Catálogo Completo</button>
+          <a
+            href="https://wa.me/5515998619433?text=Olá%20Mateus,%20gostaria%20de%20agendar%20um%20horário."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-luxury inline-block"
+          >
+            Agende seu Horário
+          </a>
         </ScrollReveal>
       </div>
     </section>
