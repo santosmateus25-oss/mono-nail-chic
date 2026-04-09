@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="border-t border-border py-12 bg-background">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="font-signature text-xl text-foreground">Nail Studio</span>
+          <span className="font-signature text-xl text-foreground">Mateus Arantes</span>
 
           <div className="flex items-center gap-6">
             <a href="#" aria-label="Instagram" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
