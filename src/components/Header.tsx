@@ -13,7 +13,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass-subtle">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <button onClick={() => scrollTo("hero")} className="font-signature text-2xl text-foreground tracking-wide">
-          Nail Studio
+          Mateus Arantes
         </button>
 
         <nav className="hidden md:flex items-center gap-8">
