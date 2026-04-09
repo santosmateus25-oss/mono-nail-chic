@@ -14,7 +14,7 @@ const Footer = () => {
           </div>
 
           <p className="font-typewriter text-xs text-muted-foreground tracking-wider">
-            © 2026 Nail Studio. Todos os direitos reservados.
+            © 2026 Mateus Arantes Nail Design. Todos os direitos reservados.
           </p>
         </div>
       </div>
